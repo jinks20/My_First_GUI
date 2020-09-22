@@ -58,6 +58,10 @@ class Sorting_Application():
         kp=self.name_other
         if kp != None:
             self.other_folder=self.name_other.get()
+            if self.other_folder !="":
+                self.other_folder=self.name_other.get()
+            else:
+                messagebox.showinfo("Error", "Please Enter Name")
 
     def browse1(self):
         op = filedialog.askdirectory()
@@ -91,12 +95,6 @@ class Sorting_Application():
 
     def starttte(self):
         self.Otherrr()
-        if self.other_folder !="":
-            # if kp != None:
-            self.other_folder=self.name_other.get()
-        else:
-            messagebox.showinfo("Error", "Please Enter Name")
-
         try:
             if self.folder_name.get()!="":
                 self.Filess = os.listdir(self.Folderr)
